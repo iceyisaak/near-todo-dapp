@@ -9,9 +9,9 @@ export function addTask(text: string, accountId: string): string | null {
 
 export function getAllTasks(): ListedTask[] {
   logging.log('Getting all Tasks')
-  const result = new Array<ListedTask>(10)
+  const result = new Array<ListedTask>(tasks.length)
   for (let i = 0; i < tasks.length; i++) {
-    result[i] = tasks[i + tasks.length]
+    result[i] = tasks[i + 1]
   }
   logging.log('Done getting all tasks.')
   return result

@@ -1,10 +1,11 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Form from '../components/Form';
+import Tasklist from '../components/Tasklist';
 
 const Dashboard = (props) => {
 
-  const { logout, greeting, buttonDisabled, showNotification, setButtonDisabled, setShowNotification, setGreeting, Notification } = props;
+  const { logout, greeting, buttonDisabled, Notification, showNotification, setButtonDisabled, setShowNotification, setGreeting, setTasklist, tasklist } = props;
 
   return (
     <>
@@ -18,6 +19,7 @@ const Dashboard = (props) => {
           setGreeting={setGreeting}
         />
       </main>
+      {tasklist && <Tasklist tasklist={tasklist} />}
       {showNotification && <Notification />}
     </>
   );
