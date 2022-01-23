@@ -10,7 +10,8 @@ import getConfig from './config';
 const { networkId } = getConfig(process.env.NODE_ENV || 'development');
 
 export default function App() {
-  const [greeting, setGreeting] = useState();
+  // const [greeting, setGreeting] = useState();
+  const [task, setTask] = useState();
   const [tasklist, setTasklist] = useState([]);
   const [buttonDisabled, setButtonDisabled] = useState(true);
   const [showNotification, setShowNotification] = useState(false);
@@ -37,14 +38,14 @@ export default function App() {
     <>
       <Dashboard
         logout={logout}
-        greeting={greeting}
+        task={task}
+        setTask={setTask}
         tasklist={tasklist}
         setTasklist={setTasklist}
         buttonDisabled={buttonDisabled}
         showNotification={showNotification}
         setButtonDisabled={setButtonDisabled}
         setShowNotification={setShowNotification}
-        setGreeting={setGreeting}
         Notification={Notification}
       />
     </>

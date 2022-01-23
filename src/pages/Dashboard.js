@@ -5,18 +5,18 @@ import Tasklist from '../components/Tasklist';
 
 const Dashboard = (props) => {
 
-  const { logout, greeting, buttonDisabled, Notification, showNotification, setButtonDisabled, setShowNotification, setGreeting, setTasklist, tasklist } = props;
+  const { logout, buttonDisabled, Notification, showNotification, setButtonDisabled, setShowNotification, task, setTask, setTasklist, tasklist } = props;
 
   return (
     <>
       <Navbar logout={logout} />
       <main>
         <Form
-          greeting={greeting}
           buttonDisabled={buttonDisabled}
           setButtonDisabled={setButtonDisabled}
           setShowNotification={setShowNotification}
-          setGreeting={setGreeting}
+          task={task}
+          setTask={setTask}
         />
       </main>
       {tasklist && <Tasklist tasklist={tasklist} />}
