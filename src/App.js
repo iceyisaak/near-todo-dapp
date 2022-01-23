@@ -18,7 +18,6 @@ export default function App() {
 
   useEffect(
     () => {
-      // in this case, we only care to query the contract when signed in
       if (window.walletConnection.isSignedIn()) {
         window.contract.getAllTasks().then(setTasklist);
       }
@@ -26,7 +25,6 @@ export default function App() {
     []
   );
 
-  // if not signed in, return early with sign-in prompt
   if (!window.walletConnection.isSignedIn()) {
     return (
       <Home login={login} />
@@ -34,7 +32,6 @@ export default function App() {
   }
 
   return (
-    // use React Fragment, <>, to avoid wrapping elements in unnecessary divs
     <>
       <Dashboard
         logout={logout}
@@ -61,7 +58,7 @@ function Notification() {
         {window.accountId}
       </a>
       {' '/* React trims whitespace around tags; insert literal space character when needed */}
-      called method: 'setGreeting' in contract:
+      called method: 'setTask' in contract:
       {' '}
       <a target="_blank" rel="noreferrer" href={`${urlPrefix}/${window.contract.contractId}`}>
         {window.contract.contractId}

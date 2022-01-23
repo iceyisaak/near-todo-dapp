@@ -5,7 +5,7 @@ import Tasklist from '../components/Tasklist';
 
 const Dashboard = (props) => {
 
-  const { logout, buttonDisabled, Notification, showNotification, setButtonDisabled, setShowNotification, task, setTask, setTasklist, tasklist } = props;
+  const { logout, buttonDisabled, Notification, showNotification, setButtonDisabled, setShowNotification, task, setTask, tasklist } = props;
 
   return (
     <>

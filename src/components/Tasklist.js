@@ -6,22 +6,30 @@ const Tasklist = (props) => {
 
   return (
 
-    <div>
-      <h2 className='text-lg'>Task List</h2>
-      <h4 className='text-sm'>
-        Total: {tasklist.length} Task(s)
-      </h4>
+    <>
+      <div className='flex flex-wrap justify-between w-full mb-4'>
+        <h2 className='text-lg'>
+          Task List
+        </h2>
+        <span className='text-sm'>Total: {tasklist.length} Task(s)</span>
+      </div>
 
-
-      {
-        tasklist.length === 0 ?
-          <p>Tasklist is Empty</p> :
-          tasklist.map((task, i) => {
-            <ol key={i}>
-              <li>{task.text}</li>
-            </ol>;
-          })}
-    </div>
+      {tasklist.length === 0 ?
+        <p>Tasklist is Empty</p> :
+        <table className='table table-auto'>
+          <tbody className=''>
+            {tasklist.map((task, i) =>
+              <tr key={i} className=''>
+                <td>
+                  <input type="checkbox" name="done" id={`check-${i}`} className='mr-3 cursor-pointer' />
+                  <label className='cursor-pointer' htmlFor={`check-${i}`}>{task.text}</label>
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      }
+    </>
   );
 };
 

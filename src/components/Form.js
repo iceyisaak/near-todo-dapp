@@ -17,8 +17,8 @@ const Form = (props) => {
       // make an update call to the smart contract
       await window.contract.addTask({
         // pass the value that the user entered in the greeting field
-        text: task.value
-        // accountId: accountId
+        text: task.value,
+        accountId: accountId
       });
     } catch (e) {
       alert(
